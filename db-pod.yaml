@@ -13,3 +13,9 @@ spec:
             name: db-secret
       ports:
         - containerPort: 5432
+      volumeMounts:
+        - mountPath: "/var/lib/postgresql/data"
+          name: postgres-data
+  volumes:
+    - name: postgres-data
+      emptyDir: {}
