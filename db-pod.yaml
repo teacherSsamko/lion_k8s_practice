@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: db
+  labels:
+    app: db
+spec:
+  containers:
+    - name: db
+      image: postgres:13
+      envFrom:
+        - secretRef:
+            name: db-secret
+      ports:
+        - containerPort: 5432
