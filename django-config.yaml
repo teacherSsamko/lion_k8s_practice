@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: django-config
 data:
-  DB_HOST: "198.19.176.35"
+  DB_HOST: "db-nodeport"
   DJANGO_SETTINGS_MODULE: "lion_app.settings.staging"
