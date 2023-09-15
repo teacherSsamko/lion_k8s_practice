@@ -4,4 +4,4 @@ metadata:
   name: {{ include "lion.fullname" . }}
 data:
   DB_HOST: {{ include "lion.db.fullname" . }}
-  DJANGO_SETTINGS_MODULE: "lion_app.settings.staging"
+  DJANGO_SETTINGS_MODULE: {{ .Values.configMap.django.DJANGO_SETTINGS_MODULE }}

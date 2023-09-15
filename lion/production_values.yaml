@@ -21,8 +21,14 @@ dbService:
 containerPort: 8000
 
 configMap:
-  django: "django-configmap"
+  django:
+    DJANGO_SETTINGS_MODULE: "lion_app.settings.staging"
 
 secret:
-  django: "django-secret"
-  db: "db-secret"
+  db:
+    POSTGRES_DB: lionforum
+    POSTGRES_USER: lion
+    POSTGRES_PASSWORD: tiger
+    POSTGRES_PORT: "5432"
+  django:
+    DJANGO_SECRET_KEY: django-insecure-9)1ht#_fpvwt&(+f0i4^sf#l=z^jc=+&b!n@o=iv38pu1vn(#&
