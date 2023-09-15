@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: {{ include "lion.fullname" . }}
 data:
-#   DB_HOST: "db-nodeport"
-  DJANGO_SETTINGS_MODULE: "lion_app.settings.test"
+  DB_HOST: {{ include "lion.db.fullname" . }}
+  DJANGO_SETTINGS_MODULE: "lion_app.settings.staging"

@@ -15,7 +15,7 @@ spec:
         - secretRef:
             name: {{ include "lion.db.fullname" . }}
       ports:
-        - containerPort: 5432
+        - containerPort: {{ .Values.dbService.port }}
       volumeMounts:
         - mountPath: "/var/lib/postgresql/data"
           name: postgres-data

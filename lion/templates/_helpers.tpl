@@ -62,7 +62,12 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 
 {{- define "lion.db.labels" -}}
 helm.sh/chart: {{ include "lion.chart" . }}
-app: db-{{ .Release.Name }}
+{{ include "lion.db.selectorLabels" . }}
 release: {{ .Release.Name }}
 app.kubernetes.io/managed-by: helm
 {{- end }}
+
+{{- define "lion.db.selectorLabels" -}}
+app: db-{{ .Release.Name }}
+{{- end }}
+
