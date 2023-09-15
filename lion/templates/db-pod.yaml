@@ -13,7 +13,7 @@ spec:
           value: "/var/lib/postgresql/data/k8s"
       envFrom:
         - secretRef:
-            name: {{ .Values.secret.db }}
+            name: {{ include "lion.db.fullname" . }}
       ports:
         - containerPort: 5432
       volumeMounts:

@@ -24,11 +24,11 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom: 
             - configMapRef: 
-                name: {{ .Values.configMap.django }}
+                name: {{ include "lion.fullname" . }}
             - secretRef:
-                name: {{ .Values.secret.django }}
+                name: {{ include "lion.fullname" . }}
             - secretRef:
-                name: {{ .Values.secret.db }}
+                name: {{ include "lion.db.fullname" . }}
           ports:
             - name: http
               containerPort: {{ .Values.containerPort }}
