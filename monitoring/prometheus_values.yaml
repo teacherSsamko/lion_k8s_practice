@@ -35,7 +35,7 @@ serverFiles:
       - job_name: django
         static_configs:
           - targets:
-              - lion-lb
+              - lion-app
 
       - job_name: prometheus
         static_configs:
